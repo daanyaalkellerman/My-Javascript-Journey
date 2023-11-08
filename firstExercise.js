@@ -73,11 +73,78 @@ console.log()
 // ***********C. Task 3. functions and contional statements************
 // N.B. READ WITH UNDERSTANDING!!!
 //  1.  Create 3 functions to convert R1000 into dollars, euros and pounds. Take function naming into consideration!
+
+function rand_to_dollars(r1000){
+    return r1000 / 18,47
+}
+function rand_to_pounds(r1000){
+    return r1000 / 22,64
+}
+function rand_to_euro(r1000){
+    return r1000 / 19,71
+}
+let r1000 = 1000
+let dollars = rand_to_dollars(r1000)
+let pounds = rand_to_pounds(r1000)
+let euro = rand_to_euro(r1000)
+console.log(dollars)
+console.log(pounds)
+console.log(euro)
+
+
 //  2.  Create a function that takes a value and calculates the amount entered including VAT (15%), amount entered should be R400.
+let moneyAmount = 400
+let vatAmount = 15
+let vatmoneyAmount =  moneyAmount * vatAmount / 100
+let finalAmount = moneyAmount + vatmoneyAmount
 //      Then display the message in the console, "The amount after tax is ...".
+console.log(`The amount after tax is ` + finalAmount)
 //  3.  Declare 3 variables 1stNum, 2ndNum, 3rdNum and assign values of 8, 20 and 14 respectfully. Now write a function that compares “num1” and “num2” and 
 //      displays the larger value.
+    let num1st = 8
+    let num2nd = 20 
+    let num3rd = 14
+
+    if(num1st>num2nd){
+        console.log( 'num1st is better and bigger')
+    } else{
+        console.log('num2nd is bigger and better')
+    }
+
+
 //  4.  Write a function that determines whether “num1” is odd or even and displays the
 //      result. (Tip: remember the modulus operator %)
+ if (num1st%2==0) {
+    console.log('this is even')    
+ } else {
+    console.log('this is odd')
+ }
+
 //  5.  Next, write a JavaScript conditional statement to sort the three numbers(1stNum, 2ndNum, 3rdNum) from largest to smallest.
 
+if (num1st>num2nd && num1st>num3rd) {
+    if (num2nd>num3rd){
+        console.log(num1st + "," + num2nd + "," + num3rd);
+    }else{
+        console.log(num1st + ","+ num3rd + "," + num2nd);
+    }
+} 
+else if (num2nd>num1st && num2nd>num3rd){
+    if(num1st>num3rd){
+        console.log(num2nd + "," + num1st + "," + num3rd);
+    }
+    else{
+        console.log(num2nd + "," + num3rd + "," + num1st);
+    }
+}
+else if (num3rd>num1st && num3rd>num2nd)
+{
+        if (num1st>num2nd)
+        {
+            console.log(num3rd + ", " + num1st + ", " + num2nd);
+        }
+        else
+        {
+            console.log(num3rd + ", " + num2nd + ", " + num1st);
+        }
+} 
