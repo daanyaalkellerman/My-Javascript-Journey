@@ -114,7 +114,7 @@ function convertDollars(a,b){
     let answer = a*b
     return answer 
 }
-convertDollars(a, 0,054)
+convertDollars(a, 0.054)
 
 
 //  2.  Create a function that takes a value and calculates the amount entered including VAT (15%), amount entered should be R400.
