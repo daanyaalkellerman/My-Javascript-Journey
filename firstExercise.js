@@ -16,17 +16,18 @@
  let score = 10;
 // 2.Create two variables called “length” and “width”. Assign each variable a value of 10 and 5 respectfully. Use
 // the variables to calculate the area of a rectangle with the length and width specified (remember area = length x width).
-let length = 5;
-let width = 10;
-let area = 5*10;
+let length = 10;
+let width = 5;
+let area = 10*5;
 // Write the following to the console using CONCATENATION and BACKTICKS: 
 // “The area of the rectangle is …” where … is the area you calculated.
 console.log(`The area of the rectangle is ` + ( area));
+console.log(`The area of the rectangle is ${area}`)
 // 3.Create two variables called “num1” and “num2.” Assign each variable a value of 10 and 4 respectfully.
 let num1 = 10;
 let num2 = 4;
 // Calculate and display in the console what the remainder is if num1 is divided by num2.
-console.log(num1 % num2);
+console.log(10 % 4);
 console.log(num1 / num2);
 // 4.Using the variables you created in the previous step, output the results
 // of the division in the following format: “num1 / num2 = x remainder y.” HINT: Backticks
@@ -34,28 +35,30 @@ let x = num1 / num2;
 let y = num1 % num2;
 
 console.log((x) + ' remainder ' + (y));
+let answer = Math.floor(10/4) //floor rounds it to the lowest ceil rounds it to the highest
+console.log(`${num1} / ${num2} = ${answer} remainder${10%4}`);
 
 // B. Task 2:Data Types
 // 1. Define the following data types with your own contents[ 'integer', 'decimal', 'string', 'array'(minimum: 3 items), 'Object'(minimum: 4 values)]
 let integer4 = 1
-let decimal3 = 4.5
+let decimal3 = 4.5 //referred to as a float
 let string2 = 'Alexander'
 let array1 = [ 'Toyota' , 'Honda', 'Golf'  ];
 
-let oboject ={
+let oboject = { //can use let,var and const to declare an object
     name: 'Jeff',
     ages:21,
     city: 'Johannesburg',
-    country: 'Southyafrica',
+    country: 'Southyafrica'
 }
-let {name,ages,city,country} = oboject;
+let {name,ages,city,country} = oboject;// same thing no values added
 
 // 2. Once you’ve created the variables, display them to the console
     console.log(integer4)
     console.log(decimal3)
     console.log(string2)
     console.log(array1)
-  console.log(oboject)
+    console.log(oboject)
 // 3. Use the ‘typeof’ function to check each variable
 console.log(typeof integer4)
 console.log(typeof decimal3)
@@ -91,14 +94,45 @@ console.log(dollars)
 console.log(pounds)
 console.log(euro)
 
+//matthews method other methods
+let a = 1000
+//function convertEuros()
+function convertEuros(a, b){
+    let answer = 1000*0.050
+    return answer
+    //console.log(answer);
+}
+convertEuros(a,0.050)  // to call the variable must be outside the block whatever is left will show first 
+
+function convertPounds(a,b){
+    let answer = a/b
+    return answer 
+}
+convertPounds(a, 22.84)
+
+function convertDollars(a,b){
+    let answer = a*b
+    return answer 
+}
+convertDollars(a, 0,054)
+
 
 //  2.  Create a function that takes a value and calculates the amount entered including VAT (15%), amount entered should be R400.
 let moneyAmount = 400
 let vatAmount = 15
 let vatmoneyAmount =  moneyAmount * vatAmount / 100
 let finalAmount = moneyAmount + vatmoneyAmount
+
+//matthews method
+
+function VAT(){
+    let answer = 400 * 115 / 100
+    let answer2 = 400*0.15
+    return answer2 + 400
+}
 //      Then display the message in the console, "The amount after tax is ...".
 console.log(`The amount after tax is ` + finalAmount)
+console.log(`the amount after tax is ${answer2}`);
 //  3.  Declare 3 variables 1stNum, 2ndNum, 3rdNum and assign values of 8, 20 and 14 respectfully. Now write a function that compares “num1” and “num2” and 
 //      displays the larger value.
     let num1st = 8
@@ -111,7 +145,15 @@ console.log(`The amount after tax is ` + finalAmount)
         console.log('num2nd is bigger and better')
     }
 
-
+//matthewss method
+display(num1st,num2nd)
+function display(num1st,num2nd){
+    if (num1st>num2nd){
+        console.log(num1st);
+    }else{
+        console.log(num2nd);
+    }
+}
 //  4.  Write a function that determines whether “num1” is odd or even and displays the
 //      result. (Tip: remember the modulus operator %)
  if (num1st%2==0) {
@@ -119,6 +161,17 @@ console.log(`The amount after tax is ` + finalAmount)
  } else {
     console.log('this is odd')
  }
+ //matthews method
+ function oddOrEven(){
+    if(num1st%2==0){
+        console.log('even');
+
+    }else{
+        console.log('odd');
+
+    }
+ }
+ oddOrEven()
 
 //  5.  Next, write a JavaScript conditional statement to sort the three numbers(1stNum, 2ndNum, 3rdNum) from largest to smallest.
 
@@ -137,7 +190,7 @@ else if (num2nd>num1st && num2nd>num3rd){
         console.log(num2nd + "," + num3rd + "," + num1st);
     }
 }
-else if (num3rd>num1st && num3rd>num2nd)
+else  (num3rd>num1st && num3rd>num2nd)
 {
         if (num1st>num2nd)
         {
@@ -148,3 +201,7 @@ else if (num3rd>num1st && num3rd>num2nd)
             console.log(num3rd + ", " + num2nd + ", " + num1st);
         }
 } 
+
+//matthews method
+
+console.log(`${num1st},${num2nd},${num3rd}`);
