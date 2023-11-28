@@ -175,32 +175,32 @@
 
 // //  5.  Next, write a JavaScript conditional statement to sort the three numbers(1stNum, 2ndNum, 3rdNum) from largest to smallest.
 
-// if (num1st>num2nd && num1st>num3rd) {
-//     if (num2nd>num3rd){
-//         console.log(num1st + "," + num2nd + "," + num3rd);
-//     }else{
-//         console.log(num1st + ","+ num3rd + "," + num2nd);
-//     }
-// } 
-// else if (num2nd>num1st && num2nd>num3rd){
-//     if(num1st>num3rd){
-//         console.log(num2nd + "," + num1st + "," + num3rd);
-//     }
-//     else{
-//         console.log(num2nd + "," + num3rd + "," + num1st);
-//     }
-// }
-// else  (num3rd>num1st && num3rd>num2nd)
-// {
-//         if (num1st>num2nd)
-//         {
-//             console.log(num3rd + ", " + num1st + ", " + num2nd);
-//         }
-//         else
-//         {
-//             console.log(num3rd + ", " + num2nd + ", " + num1st);
-//         }
-// } 
+if (num1st>num2nd && num1st>num3rd) {
+    if (num2nd>num3rd){
+        console.log(num1st + "," + num2nd + "," + num3rd);
+    }else{
+        console.log(num1st + ","+ num3rd + "," + num2nd);
+    }
+} 
+else if (num2nd>num1st && num2nd>num3rd){
+    if(num1st>num3rd){
+        console.log(num2nd + "," + num1st + "," + num3rd);
+    }
+    else{
+        console.log(num2nd + "," + num3rd + "," + num1st);
+    }
+}
+else  (num3rd>num1st && num3rd>num2nd)
+{
+        if (num1st>num2nd)
+        {
+            console.log(num3rd + ", " + num1st + ", " + num2nd);
+        }
+        else
+        {
+            console.log(num3rd + ", " + num2nd + ", " + num1st);
+        }
+} 
 
 // //matthews method
 
@@ -251,12 +251,12 @@ array.concat(string)
 
 // document object model manipulation
 
-let clickMe = document.querySelector('[data-clickMe]')
-clickMe.addEventListener('click',alert())
+// let clickMe = document.querySelector('[data-clickMe]')
+// clickMe.addEventListener('click',alert())
 
-function alert(){
-    alert('this was pushed')
-}
+// function alert(){
+//     alert('this was pushed')
+// }
 
 // //objects
 // //key and value
@@ -434,6 +434,470 @@ switch(condition){
 //while loop
 let result = ''
 let i = 0
+while (i <= 10){
+    console.log("The number is " + i);
+    i++
+}
+
+//do while loop
+
+// do{
+//     i = i + 1;
+//     result = result + i
+// } while (i < 5)
+
+console.log(result);
+
+let laptop = {
+    name: 'something',
+    battery: '3999'
+};
+
+let (name, battery) = laptop
+
+
+//cloning an object
+
+//shallow copy
+//curly braces shows an object {}
+const car1= {
+    brand:'ford',
+    type: 'figo',
+    transmission: 'manual'
+}
+//using car. clonedObject is not its own object 
+//using the OG object as reference
+let clonedObject = Object.assign({}, car1)
+
+//spread operator
+//same thing using car1 as a reference
+let secondClone = {...car1}
+
+//for deep cloning
+//store object using a string
+
+let car2 = {
+    brand: 'ford',
+    type: 'figo',
+    transmission: 'manual',
+    engine: {
+        fast: 'very fast',
+        disadvantage:'use alot of petrol'
+    }
+}
+
+let thirdClone = JSON.parse(JSON.stringify(car2))
+
+//will be its own object 
+
+
+//combining arrays
+
+let three = [3] //if you want to use spread operators
+let array = [6,7,8,9]
+//spread allows you to insert anywhere
+let secondArray = [1,2,...three,4,5] //if you want to use spread operators
+let newArray = secondArray.concat(array)
+//concat addds to the end of the array
+//clone
+let clonedArray = [...array]
+
+//looping through an object
+//use bracket notation for in loops
+for (let x in car2){
+    console.log(car2[x]);
+}
+
+//looping through an array
+
+for (let x in newArray){
+    console.log(x)
+}
+
+for (let x of newArray){
+    console.log(x)
+}
+//both prints the same thing
+
+//arrow function
+
+// if you have multiple 
+// let add = () =>{
+//     return 'arrroooowww function'
+// }
+// function add (){
+//     return 'arrroooowww function'
+// }
+
+// for one line
+// let add = a => 'arrroooowww function'
+
+// function add (){
+//     return 'arrroooowww function'
+// }
+
+//anonymous functions
+//self invoked fucntions
+
+//it'll console log 
+//alert 
+//call it using the ()()
+
+(
+    function(){
+        console.log('This is an anonymous function');
+    }
+)()
+//another type of anonymous
+// let button;
+// button.addEventListener('click', function() or ()=> alert('something'))
+
+function name1(x){
+    return (Math.sqrt(x))
+}
+console.log(name1(25));
+
+
+// //objects in an array
+
+// let people = [
+//     {
+//         name:'John',
+//         age:25,
+//         description:'i like coding'
+//     },
+//     {
+//         name:'Junior',
+//         age:20,
+//         description:'i like coding very much'
+//     },
+//     {
+//         name:'Charles',
+//         age:30,
+//         description:'i don\'t like coding at all'
+//     }
+// ]
+
+map/reduce/filter
+
+// //map\\
+// // takes array of items and creates a new array based off existing array 'takes info from old makes new'
+// //accepts para function and return what we want
+// //person represents each object{}
+// //this will get the name of the first object
+// let values = people.map(person=>{
+//     return person.name
+// })
+// console.log(values);
+
+// //filter\\
+// //allows you to take an array and filter out items that meet a condition
+// // check condition whichever is true or false if its true itll return
+// //can use words aswell
+// //eg. signup page
+
+// let overTwentyOne = people.filter(person=>{
+//     return person.name == 'John'
+// })
+// console.log(overTwentyOne);
+
+// //combinefilter and map\\
+
+// let numbers = people.filter(person=>{
+//     return person.age>21
+// }).map(person =>{
+//     return person.name
+// })
+// console.log(numbers)
+
+// //reduce\\
+// //reduces the array to a single value which will normally be a string or number.
+// //total is the current amount of the value so far
+// // person is the singular, used for looking/iterating refers to the object
+// //declared value of total to start from which is initially 0 
+// //so it basically adds all the ages by using the word total in placement of the age of the first object then plusing the second then that total becomes total lmao
+// //average is age
+// let totalAge = people.reduce((total, person)=>{
+//     return total + person.age
+// }, 0)
+// console.log(totalAge);
+
+// //rest parameters----show old way with arguments[1]
+// //old way...damn... dont use it
+// function add(){
+//     console.log(arguments[0] + arguments[1] + arguments[2] + arguments[3]);
+// }
+// add(10,3,3,7)
+
+//rest parameters
+function sum(a,b,...args){
+    //add first 2 like normal
+    let num = a + b;
+    //run //for of loop\\ to loop through rest to add to num
+    for(let x of args){
+        num = num + x
+    }
+    console.log(num);
+    return num
+}
+sum(10,4,10,3,3)
+
+//error handling
+
+//try represents the code you want to run/ runs the code
+// catch returns an object
+//check if the code has a problem
+//the moment it gets to random it wont run
+//some browsers dont support this
+//throw custom error
+let x;
+try{
+    if(typeof x !='number'){
+        throw new Error('the data type is not a number')
+    }
+    console.log('this is a message')
+    random()
+    console.log('this is another message')
+} catch(error){
+    // console.log('no value for random function');
+    console.log('Error:' + error.stack)
+}finally{
+    console.log('this will always run');
+}
+// stack looks for what line the error is
+// finally, closes the connection ater we get an error
+// can be used in a conditional statement
+
+//getters and setters
+
+let person ={
+    firstName : 'Matt',
+    lastName : 'brown',
+    //getter allows you to call the method inside the object
+    get fullName(){
+        return person.firstName + " " + person.lastName
+    },
+    //setter allows you to reset the value of objects and change 
+    set fullName(value){
+        let partsOfName = value.split(' ')
+        this.firstName = partsOfName[0]
+        this.lastName = partsOfName[1]
+    }
+}
+person.fullName = 'matthew brown';
+//if you use the = it will recognize if youre setting
+//so the value will change
+//split makes string into array
+//wherever theres a space split will add the comma by indicating where you want it 
+console.log(person);
+
+//application programming interface
+//API get data from server and use it, transferred using JSON
+//array of objects
+// {
+//     "employees":[
+//         {"firstName":"John", "lastName:"Doe"},
+//         {"firstName":"Ana", "lastName:"Smith"},
+//         {"firstName":"Peter", "lastName:"Jones"}
+//     ]
+// }
+
+//double quotations is a must
+    fetch('https://reqres.in/api/users/')
+    .then(res => {
+        if(!res.ok)
+            throw new Error('No response')
+        return res.json()
+
+    })
+    .then(info => {
+      sessionStorage.setItem('API',JSON.stringify(info.data))
+    } ) //auto return with arrow function
+    .catch(err => console.log(err))
+    let object = JSON.parse(sessionStorage.getItem('API'))
+    console.log(object);
+    //catches errors that you made when typing
+    //.then run this next piece of code once the API has gotten a response
+    //ok true means response is successful for us getting data
+    //session storage stores for as long as browser open
+    //local storage stores it forever!use for ecommerce
+
+    // //objects
+// //key and value
+// //key  = property (something about an object)
+// //objects set to a variable have to use braces{}
+// //object literals / declaration
+// let car = {
+//     name : 'Toyota',
+//     type : 'sprint',
+//     engineSize : '1.5 litre'
+// }
+
+// new keyword
+// overwrites
+let person = new Object
+person.name = 'Matthew'
+person.lastName = 'Brown'
+person.age = 23
+person.favFood = 'anything'
+//only use if youre working with others
+delete person.favFood
+
+// //object.create
+
+// // let blank = {
+// //     name: null,
+// //     surname: null,
+// //     age: null
+// // }
+
+// // let newBlank = Object.create(blank)
+// // newBlank.name = 'matthew'
+
+// //delete - use only on objects
+
+// //nested objects
+
+// const desktop = {
+//     cpu: 'Ryzen 5',
+//     ram: '8 gigs',
+//     hard_drive: {
+//         first: '1000gigs',
+//         second: '500gigs'
+//     }
+// }
+// // desktop.hard_drive.first to access the first object within the object
+
+// //nested objects in arrays
+
+// const myObj = {
+//     name: 'John',
+//     age: 60,
+//     cars: [
+//         {
+//             name:'Ford',
+//             models: ['fiesta','focus','mustang']
+//         },
+//         {
+//             name:'BMW',
+//             models:['320','X3','X5']
+//         },
+//         {
+//             name: 'Fiat',
+//             models:['500','Panda']
+//         }
+//     ]
+// }
+
+//object method - function inside the object
+//function inside of an object is a method
+// const person = {
+//     firstName: 'Johna',
+//     lastName: 'doee',
+//     id: 445,
+//     fullName: function(){
+//         return this.firstName + " " + this.lastName;
+//     }
+// };
+// //this is a keyword in javascript that tells your function that you want to use this first name this last name (global scoping) (only works within objects)
+
+// //will print info to the page
+
+// const person = {
+//     firstName: 'Johna',
+//     lastName: 'doee',
+//     id: 445,
+//     fullName: function(){
+//         return (this.firstName + " " + this.lastName)
+//         .toUpperCase();
+//     }
+// };
+// document.querySelector('h1').innerText = person.fullName();
+
+// for in loop
+// have to use object expression where p is used as index with [], square brackets
+for (let p in person){
+    console.log(person[p])
+}
+
+// //nested loop to access information in the cars
+
+// for(i in myObj.cars){
+//     console.log(myObj.cars[i].name)
+//     for(x in myObj.cars[i].models){
+//         console.log(myObj.cars[i].models[x]);
+//     }
+// }
+
+// //factory function object RETURN an object
+
+function createPerson(firstName, lastName, age){
+    let myObjeje={
+         firstName: firstName,
+        lastName: lastName,
+        age: age,
+       
+    }
+    return myObjeje
+    //still works both ways
+    // return {
+    //     firstName: firstName,
+    //     lastName: lastName,
+    //     age: age,
+    // }
+}
+// function createPerson(){
+//     let myObjeje={
+//          firstName: 'namename',
+//         lastName: 'surname',
+//         age: 21,
+       
+//     }
+//     return myObjeje
+
+//you dont need the [new] keyword
+
+// let person4 =createPerson('danny','idk',32)
+// let personActions= {
+//     getfullName(){
+//         return this.firstName + ''+this.lastName
+//     }
+// }
+// let person3 =createPerson('matthew', 'brown', 23,personActions.getfullName())
+// // [this] is a constructer function 
+
+
+function carDescription(brand,year,model,colour){
+    this.brand = brand
+    this.year = year;
+    this.model = model;
+    this.colour = colour;
+}
+
+let car1= new carDescription('porsche','GT3',2013,'white')
+
+
+//switch statement cont.
+//to check multiple values
+let mark = 100
+let condition = true
+switch(condition){
+    case 100:
+        console.log('This is full marks');
+            break
+    case(mark>80):
+        console.log('this is great');
+             break
+    case (mark>70):
+            console.log('This is good');
+            break
+            default:
+            console.log('This is low ');
+}
+
+//while loop
+let result = ''
+let i = 0
 // while (i <= 10){
 //     console.log("The number is " + i);
 //     i++
@@ -448,9 +912,15 @@ do{
 
 console.log(result);
 
-let laptop = {
-    name: 'something',
-    battery: '3999'
-};
+// let laptop = {
+//     name: 'something',
+//     battery: '3999'
+// };
 
-let (name, battery) = laptop
+// let (name, battery) = laptop
+
+let names = ['matthew', 'warren', 'darren','brandon','corne']
+
+for (let c=0;c<names.length;c++){
+    console.log(names[c]);
+}
